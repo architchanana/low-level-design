@@ -1,28 +1,54 @@
-## SOLID
-# S - single responsibility principle
-# O - open close principle
-# L - Liskov substitution
-# I - Interface separation principle
-# D - Dependency Inversion principle
+# SOLID Principles
 
+| Letter | Principle |
+|--------|-----------|
+| **S** | Single Responsibility Principle |
+| **O** | Open/Closed Principle |
+| **L** | Liskov Substitution Principle |
+| **I** | Interface Segregation Principle |
+| **D** | Dependency Inversion Principle |
 
-# Single responsibility principle
-A class should have only one reason to change, meaning it should only have one responsibility.
-Example: A USER class should only handle user related logic, while database-related operation should be handled by a
-separate UserRepository class.
+---
 
-# Open close principle
-Software entities should be open fpr the extension but closed for modification
-Example: Adding new functionality to a system using inheritance/interface/abstract for composition without modifying existing code.
+## Single Responsibility Principle (SRP)
 
-# Liskov substitution
-This states that the object of a superclass should be replaceable with objects of a subclass without altering the correctness of the program.
-It ensures that a subclass in for its parent class and function in any context that expects the parent class
+A class should have only **one reason to change**, meaning it should have only one responsibility.
 
-# Interface Separation principle
-It ensures that classes are not burdened without methods they don't need. it promotes better design by breaking large general purpose interfaces into smaller,
-more specific ones.
-It improves maintainability, flexibility and testability by ensuring that classes only have dependencies they actually require.
+**Example:** A `User` class should only handle user-related logic, while database operations should be handled by a separate `UserRepository` class.
 
-# Dependency Inversion Principle
-High-level modules should not depend on low-modules; both should depend on abstractions.
+---
+
+## Open/Closed Principle (OCP)
+
+Software entities should be **open for extension** but **closed for modification**.
+
+**Example:** Adding new functionality to a system using inheritance, interfaces, or abstract classes (composition) — without modifying existing code.
+
+---
+
+## Liskov Substitution Principle (LSP)
+
+Objects of a superclass should be **replaceable with objects of a subclass** without altering the correctness of the program. A subclass must be able to stand in for its parent class and function correctly in any context that expects the parent class.
+
+**Example:** The `LSP/goodCode` directory demonstrates this by segregating read and write capabilities into separate interfaces:
+
+- `Readable` — interface for read operations
+- `Writable` — interface for write operations
+- `ReadableClass` — implements `Readable`
+- `WriteableClass` — extends `ReadableClass` and implements `Writable`
+
+Because `WriteableClass` extends `ReadableClass`, it can be substituted anywhere a `ReadableClass` is expected without breaking behaviour.
+
+---
+
+## Interface Segregation Principle (ISP)
+
+Classes should **not be forced to implement methods they don't use**. Large, general-purpose interfaces should be broken into smaller, more specific ones.
+
+This improves maintainability, flexibility, and testability by ensuring classes only depend on the methods they actually require.
+
+---
+
+## Dependency Inversion Principle (DIP)
+
+High-level modules should **not depend on low-level modules**; both should depend on **abstractions**. Abstractions should not depend on details — details should depend on abstractions.
