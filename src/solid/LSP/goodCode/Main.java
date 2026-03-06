@@ -1,4 +1,4 @@
-package SOLID.LSP.goodCode;
+package solid.LSP.goodCode;
 
 public class Main {
     static void main(String[] args) {

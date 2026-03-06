@@ -1,4 +1,4 @@
-package SOLID.LSP.goodCode;
+package solid.LSP.goodCode;
 
 public class ReadableClass implements Readable{
     @Override

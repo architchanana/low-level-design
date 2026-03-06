@@ -1,4 +1,4 @@
-# SOLID Principles
+# solid Principles
 
 | Letter | Principle |
 |--------|-----------|
